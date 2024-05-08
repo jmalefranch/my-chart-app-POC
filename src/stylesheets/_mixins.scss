@@ -1,0 +1,52 @@
+@use 'sass:math';
+@use 'variables';
+
+// Responsive font size
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+	$responsive-unitless: math.div($responsive, $responsive - $responsive + 1);
+	$dimension: if(unit($responsive) == 'vh', 'height', 'width');
+	$min-breakpoint: math.div($min, $responsive-unitless) * 100;
+
+	@media (max-#{$dimension}: #{$min-breakpoint}) {
+		font-size: $min;
+	}
+
+	@if $max {
+		$max-breakpoint: $max / $responsive-unitless * 100;
+
+		@media (min-#{$dimension}: #{$max-breakpoint}) {
+			font-size: $max;
+		}
+	}
+
+	@if $fallback {
+		font-size: $fallback;
+	}
+
+	font-size: $responsive;
+}
+
+// Theme color
+@mixin theme-color($theme) {
+	@if $theme == dark {
+	  background-color: #000;
+	  color: #fff;
+	} @else if $theme == light {
+	  background-color: #fff;
+	  color: #000;
+	} @else {
+	  background-color: #fff;
+	  color: #fff;
+	}
+}
+
+// Button
+@mixin button-styles($bg-color, $text-color, $font-size) {
+	background-color: $bg-color;
+	color: $text-color;
+	font-size: $font-size;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}

@@ -1,0 +1,120 @@
+//
+// Generate fade in animations
+// --------------------------------------------------
+
+@mixin fade-in-animation($direction, $value) {
+    @keyframes fade-in-#{$direction} {
+        from {
+            opacity: 0;
+            @if $direction == "left" {
+                transform: translate3d(#{-$value}, 0, 0);
+            } @else if $direction == "right" {
+                transform: translate3d(#{$value}, 0, 0);
+            } @else if $direction == "up" {
+                transform: translate3d(0, #{$value}, 0);
+            } @else if $direction == "down" {
+                transform: translate3d(0, #{-$value}, 0);
+            }
+        }
+        to {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+}
+@include fade-in-animation("up", 50px);
+@include fade-in-animation("down", 50px);
+@include fade-in-animation("left", 50px);
+@include fade-in-animation("right", 50px);
+
+@mixin fade-out-animation($direction, $value) {
+    @keyframes fade-out-#{$direction} {
+        from {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+        to {
+            opacity: 0;
+            @if $direction == "left" {
+                transform: translate3d(#{-$value}, 0, 0);
+            } @else if $direction == "right" {
+                transform: translate3d(#{$value}, 0, 0);
+            } @else if $direction == "up" {
+                transform: translate3d(0, #{$value}, 0);
+            } @else if $direction == "down" {
+                transform: translate3d(0, #{-$value}, 0);
+            }
+        }
+    }
+}
+@include fade-out-animation("up", 50px);
+@include fade-out-animation("down", 50px);
+@include fade-out-animation("left", 50px);
+@include fade-out-animation("right", 50px);
+
+//
+// Reveal animation
+// --------------------------------------------------
+
+@mixin reveal-animation($delay) {
+    :global {
+        opacity: 0;
+        animation: simple-reveal ease forwards 250ms #{$delay};
+    }
+}
+
+//
+// Common animations
+// --------------------------------------------------
+
+@keyframes side-reveal {
+    from {
+        opacity: 0;
+        transform: translateX(var(--transitionDirection, 0));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes simple-reveal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes simple-hide {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    15% {
+        opacity: 0.5;
+    }
+
+    25% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}

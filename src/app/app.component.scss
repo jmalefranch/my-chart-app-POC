@@ -1,3 +1,5 @@
+@use "../stylesheets/mixins";
+@use "../stylesheets/variables";
 
 .section-charts-wrapper {
   display: flex;
@@ -18,3 +20,16 @@
   margin: 1rem 2rem;
 }
 
+h1 {
+  color: #000;
+}
+
+/* .btn-primary {
+  @extend %button;
+  @include button-styles($ms-blue, $white, 16px);
+}
+
+.btn-secondary {
+  @extend %button;
+  @include button-styles($white, $black, 14px);
+} */

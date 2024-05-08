@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import './stylesheets/main.scss';
+
+:root {
+    background-color: $hd-util-light-gray;
+}
+
+app-root {
+    min-width: $app-root-min-width;
+}
+
+.theme {
+    [data-root-theme = "light"] & {
+        @include theme-color(light);
+    }
+    [data-root-theme = "dark"] & {
+        @include theme-color(dark);
+    }
+}

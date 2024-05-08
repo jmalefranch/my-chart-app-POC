@@ -1,0 +1,122 @@
+@use "sass:math";
+
+:root {
+    $hd-custom-theme-color-primary: #0f6cbd;
+    --hd-color-primary: #{$hd-custom-theme-color-primary};
+    --hd-color-primary-light: #{lighten($hd-custom-theme-color-primary, 10%)};
+    --hd-color-primary-dark: #{darken($hd-custom-theme-color-primary, 10%)};
+    --hd-color-primary-lightest: #{lighten($hd-custom-theme-color-primary, 20%)};
+    --hd-color-primary-darkest: #{lighten($hd-custom-theme-color-primary, 20%)};
+    --hd-color-primary-alpha-5: #{rgba($hd-custom-theme-color-primary, 5%)};
+    --hd-color-primary-alpha-10: #{rgba($hd-custom-theme-color-primary, 10%)};
+    --hd-color-primary-alpha-15: #{rgba($hd-custom-theme-color-primary, 15%)};
+
+    // Others
+
+    $hd-color-white: #ffffff;
+    --hd-color-white: #{$hd-color-white};
+    --hd-color-white-alpha-10: #{rgba($hd-color-white, 10%)};
+    --hd-color-white-alpha-15: #{rgba($hd-color-white, 15%)};
+    --hd-color-white-alpha-20: #{rgba($hd-color-white, 20%)};
+    --hd-color-white-alpha-25: #{rgba($hd-color-white, 25%)};
+    --hd-color-white-alpha-5: #{rgba($hd-color-white, 5%)};
+
+    $hd-color-black: #000000;
+    --hd-color-black: #{$hd-color-black};
+    --hd-color-black-alpha-10: #{rgba($hd-color-black, 10%)};
+    --hd-color-black-alpha-15: #{rgba($hd-color-black, 15%)};
+    --hd-color-black-alpha-20: #{rgba($hd-color-black, 20%)};
+    --hd-color-black-alpha-25: #{rgba($hd-color-black, 25%)};
+    --hd-color-black-alpha-5: #{rgba($hd-color-black, 5%)};
+
+    /* hd-token-status */
+
+    $hd-color-status-error: #cf373b;
+    --hd-color-status-error: #{$hd-color-status-error};
+    --hd-color-status-error-alpha-10: #{rgba($hd-color-status-error, 10%)};
+    --hd-color-status-error-alpha-15: #{rgba($hd-color-status-error, 15%)};
+    --hd-color-status-error-alpha-5: #{rgba($hd-color-status-error, 5%)};
+    --hd-color-status-error-dark: #{darken($hd-color-status-error, 10%)};
+    --hd-color-status-error-darkest: #{darken($hd-color-status-error, 20%)};
+    --hd-color-status-error-light: #{lighten($hd-color-status-error, 10%)};
+    --hd-color-status-error-lightest: #{lighten($hd-color-status-error, 20%)};
+
+    $hd-color-status-good: #0f6cbd;
+    --hd-color-status-good: #{$hd-color-status-good};
+    --hd-color-status-good-alpha-10: #{rgba($hd-color-status-good, 10%)};
+    --hd-color-status-good-alpha-15: #{rgba($hd-color-status-good, 15%)};
+    --hd-color-status-good-alpha-5: #{rgba($hd-color-status-good, 5%)};
+    --hd-color-status-good-dark: #{darken($hd-color-status-good, 10%)};
+    --hd-color-status-good-darkest: #{darken($hd-color-status-good, 20%)};
+    --hd-color-status-good-light: #{lighten($hd-color-status-good, 10%)};
+    --hd-color-status-good-lightest: #{lighten($hd-color-status-good, 20%)};
+
+    $hd-color-status-success: #0E700E;
+    --hd-color-status-success: #{$hd-color-status-success};
+    --hd-color-status-success-alpha-10: #{rgba($hd-color-status-success, 10%)};
+    --hd-color-status-success-alpha-15: #{rgba($hd-color-status-success, 15%)};
+    --hd-color-status-success-alpha-5: #{rgba($hd-color-status-success, 5%)};
+    --hd-color-status-success-dark: #{darken($hd-color-status-success, 10%)};
+    --hd-color-status-success-darkest: #{darken($hd-color-status-success, 20%)};
+    --hd-color-status-success-light: #{lighten($hd-color-status-success, 10%)};
+    --hd-color-status-success-lightest: #{lighten($hd-color-status-success, 20%)};
+
+    $hd-color-status-warning: #e8af3b;
+    --hd-color-status-warning: #{$hd-color-status-warning};
+    --hd-color-status-warning-alpha-10: #{rgba($hd-color-status-warning, 10%)};
+    --hd-color-status-warning-alpha-15: #{rgba($hd-color-status-warning, 15%)};
+    --hd-color-status-warning-alpha-5: #{rgba($hd-color-status-warning, 5%)};
+    --hd-color-status-warning-dark: #{darken($hd-color-status-warning, 10%)};
+    --hd-color-status-warning-darkest: #{darken($hd-color-status-warning, 20%)};
+    --hd-color-status-warning-light: #{lighten($hd-color-status-warning, 10%)};
+    --hd-color-status-warning-lightest: #{lighten($hd-color-status-warning, 20%)};
+
+    /* hd-token-gray */
+    --hd-color-gray-100: #fafafa;
+    --hd-color-gray-200: #f6f6f6;
+    --hd-color-gray-250: #efefef;
+    --hd-color-gray-300: #dddddd;
+    --hd-color-gray-350: #cecece;
+    --hd-color-gray-400: #cccccc;
+    --hd-color-gray-450: #bfbfbf;
+    --hd-color-gray-500: #b8b8b8;
+    --hd-color-gray-550: #a7a7a7;
+    --hd-color-gray-600: #999999;
+    --hd-color-gray-650: #888888;
+    --hd-color-gray-700: #777777;
+    --hd-color-gray-750: #666666;
+    --hd-color-gray-800: #555555;
+    --hd-color-gray-830: #505050;
+    --hd-color-gray-850: #444444;
+    --hd-color-gray-870: #3f3f3f;
+    --hd-color-gray-900: #333333;
+    --hd-color-gray-910: #323232;
+    --hd-color-gray-920: #303030;
+    --hd-color-gray-930: #292929;
+    --hd-color-gray-940: #252525;
+    --hd-color-gray-950: #222222;
+    --hd-color-gray-960: #202020;
+    --hd-color-gray-970: #111111;
+    --hd-color-gray-980: #0e0e0e;
+    --hd-color-gray-990: #0a0a0a;
+
+    $hd-color-gray-base: #808080;
+    // generate alpha grays
+    @for $i from 10 through 95 {
+        @if $i % 5 == 0 {
+            --hd-color-gray-alpha-#{$i}: #{rgba($hd-color-gray-base, math.div($i, 100))};
+        }
+    }
+
+    /* hd-token-color-data */
+    --hd-color-data-blue: #267dd4;
+    --hd-color-data-cyan: #0dcaf0;
+    --hd-color-data-green: #198754;
+    --hd-color-data-indigo: #6f45be;
+    --hd-color-data-orange: #fd7e14;
+    --hd-color-data-pink: #d63384;
+    --hd-color-data-purple: #8e71c5;
+    --hd-color-data-red: #dc3545;
+    --hd-color-data-teal: #20c997;
+    --hd-color-data-yellow: #ffc107;
+}

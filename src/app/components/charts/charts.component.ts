@@ -22,7 +22,7 @@ export class ChartsComponent implements OnInit {
  genderChart: any;
  countryChart: any;
 
- constructor(private apiService: ApiService) {}
+ constructor(private readonly apiService: ApiService) {}
 
  ngOnInit() {
     this.apiService.getChartData().subscribe(data => {

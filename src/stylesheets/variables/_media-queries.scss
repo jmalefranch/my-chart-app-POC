@@ -1,0 +1,36 @@
+// Main switch
+// -------------------------
+
+$mobile-only: "(max-width: 799px)";
+$desktop-only: "(min-width: 800px)";
+
+
+// Mobile breakpoints
+// -------------------------
+
+$break-sm: "(min-width: 576px)";
+$break-md: "(min-width: 768px)";
+
+$max-sm: "(max-width: 575px)";
+$max-md: "(max-width: 767px)";
+
+
+// Desktop breakpoints
+// -------------------------
+
+// Width
+
+$break-lg: "(min-width: 992px)";
+$break-xl: "(min-width: 1200px)";
+$break-xxl: "(min-width: 1300px)";
+
+$max-lg: "#{$desktop-only} and (max-width: 991px)";
+$max-xl: "#{$desktop-only} and (max-width: 1199px)";
+$max-xxl: "(max-width: 1299px)";
+
+// Height
+
+$height-sm: "(max-height: 600px) and #{$desktop-only}";
+$height-md: "(max-height: 700px) and #{$desktop-only}";
+$height-lg: "(max-height: 850px) and #{$desktop-only}";
+$height-xl: "(max-height: 900px)";
